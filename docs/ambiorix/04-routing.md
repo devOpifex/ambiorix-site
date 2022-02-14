@@ -1,6 +1,6 @@
 # Routing
 
-When a client (web browser) points to a path (e.g.: `/about`) a request is made to the server (`GET` in this case), ambiorix then looks through the handlers __in the order they were added__ and when it finds one that matches the requested path runs the handler function (`\(req, res)`). This function should return a response (using the `res` object) or a future (see [asynchronous programming](/guide/async)).
+When a client (web browser) points to a path (e.g.: `/about`) a request is made to the server (`GET` in this case), ambiorix then looks through the handlers __in the order they were added__ and when it finds one that matches the requested path runs the handler function (`\(req, res)`). This function should return a response (using the `res` object) or a future (see asynchronous programming).
 
 ```r
 library(ambiorix)
@@ -32,7 +32,7 @@ flowchart LR
 
 ## Handler
 
-The handler function used for every route __must take 2 arguments__: the request, and the response. The first holds data on the request that is made to the server, which contains many things but importantly includes `parameters` and the parsed `query` string. You can learn more about these in the [parameters and query ](/guide/params) section.
+The handler function used for every route __must take 2 arguments__: the request, and the response. The first holds data on the request that is made to the server, which contains many things but importantly includes `parameters` and the parsed `query` string. You can learn more about these in the parameters and query section.
 
 ```r
 library(ambiorix)
@@ -72,6 +72,6 @@ app$get("/next", \(req, res){
 app$start()
 ```
 
-If no route match the requested path then ambiorix runs the `404`/`not_found` handler, see [not found](guide/not-found). 
+If no route match the requested path then ambiorix runs the `404`/`not_found` handler, see not found. 
 
-Routing is crucial to ambiorix, it therefore also comes with a [router](guide/router) to better structure complex routing for large applications.
+Routing is crucial to ambiorix, it therefore also comes with a router to better structure complex routing for large applications.

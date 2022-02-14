@@ -4,7 +4,7 @@ You can also employ middleware with `use`: these are run first at every request.
 
 :::note
 
-See [request](guide/request?id=set-amp-get) documentation to see how to add and retrieve data
+See request documentation to see how to add and retrieve data
 from the request.
 
 :::

@@ -35,7 +35,7 @@ app$get("/file", \(req, res){
 
 ## Render
 
-An `.html` or `.R` file can also be rendered. The difference with `send_file` is that it will use `data` to process `[% tags %]`. You can read more it in the [templates](/guide/project?id=templates) documentation.
+An `.html` or `.R` file can also be rendered. The difference with `send_file` is that it will use `data` to process `[% tags %]`. You can read more it in the templates documentation.
 
 ```r
 # renders templates/home.html
@@ -47,7 +47,7 @@ app$get("/:book", \(req, res){
 
 ## JSON
 
-You can also send JSON responses with `json`, e.g.: to build an [api](/examples/api)
+You can also send JSON responses with `json`, e.g.: to build an api
 
 ```r
 app$get("/:book", \(req, res){
@@ -93,7 +93,7 @@ app$get("/csv", \(req, res){
 
 ## TSV
 
-Serialises to tab separated file; it takes the same arguments as the [csv response](guide/response?id=csv).
+Serialises to tab separated file; it takes the same arguments as the csv response.
 
 ```r
 app$get("/tsv", \(req, res){
