@@ -1,9 +1,5 @@
 # Hello World
 
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
 By default ambiorix will serve the application on a random port, this can be changed, along with other things, when instantiating the class. 
 
 ```r
@@ -22,9 +18,7 @@ app$get("/about", \(req, res){
 app$start()
 ```
 
-<!-- div:right-panel -->
-
 ![](../_assets/rstudio.png)
 
-<!-- panels:end -->
-
+In your browser, visit `/` to see the homepage, and visit
+`/about` to see the about page.

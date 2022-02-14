@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/ambiorix">
-              Ambiorix
+              Get Started
           </Link>
         </div>
       </div>
