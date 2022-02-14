@@ -1,6 +1,6 @@
 # Response
 
-Every route (`get`, `post`, etc.) handler should accept the request (`req`) and the response (`res`). Note that routes may optionally accept a different handler for [errors](/guide/errors).
+Every route (`get`, `post`, etc.) handler should accept the request (`req`) and the response (`res`). Note that routes may optionally accept a different handler for errors.
 
 ## HTML
 
