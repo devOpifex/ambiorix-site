@@ -49,10 +49,11 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/docs/ambiorix', label: 'Applications', position: 'left'},
-          {to: '/docs/belgic', label: 'Server', position: 'left'},
+          {to: '/docs/ambiorix', label: 'Package', position: 'left'},
+          {to: '/docs/belgic', label: 'Belgic', position: 'left'},
           {to: '/docs/generator', label: 'Generator', position: 'left'},
           {to: '/docs/cli', label: 'CLI', position: 'left'},
+          {to: '/docs/examples', label: 'Examples', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -77,25 +78,17 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/ambiorix',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/devOpifex',
               },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',

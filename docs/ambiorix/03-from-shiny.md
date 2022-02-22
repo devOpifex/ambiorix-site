@@ -8,6 +8,13 @@ ambiorix is certainly not as opinionated and though one can build applications
 very similar to shiny applications (SPA) using websockets with ambiorix since 
 it allows multiple pages one is likely to make use of those instead.
 
+:::tip
+
+Designing applications will, in all likelihood, always be faster with
+Shiny.
+
+:::
+
 ## Inputs
 
 Input data can be either `POST`ed (form) or used as is done in shiny using the

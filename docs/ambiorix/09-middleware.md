@@ -4,10 +4,12 @@ You can also employ middleware with `use`: these are run first at every request.
 
 :::note
 
-See request documentation to see how to add and retrieve data
-from the request.
+See requestnd response documentation to see how to add and retrieve data
+from them.
 
 :::
+
+## Using middlewares
 
 Below we add a middleware that simply print the time at which the request is recevied.
 
@@ -53,6 +55,26 @@ app$get("/about", \(req, res){
 
 app$use(\(req, res){
   req$get(x)
+})
+
+app$start()
+```
+
+## Agris
+
+The [agris](https://github.com/devOpifex/agris) set of middlewares
+to improve the security of your applications.
+
+```r
+library(agris)
+library(ambiorix)
+
+app <- Ambiorix$new()
+
+app$use(agris())
+
+app$get("/", \(req, res){
+  res$send("Using {ambiorix}!")
 })
 
 app$start()
