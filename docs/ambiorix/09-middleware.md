@@ -4,10 +4,21 @@ You can also employ middleware with `use`: these are run first at every request.
 
 :::note
 
-See requestnd response documentation to see how to add and retrieve data
+See request and response documentation to see how to add and retrieve data
 from them.
 
 :::
+
+## Middlewares
+
+List of existing middleswares.
+
+- [druid](https://github.com/devOpifex/druid) Logger
+- [alesia](https://github.com/devOpifex/alesia) Minifier
+- [eburones](https://github.com/devOpifex/eburones) Sessions
+- [agris](https://github.com/devOpifex/druid) Security
+
+_Feel free to make a PR to add to the list._
 
 ## Using middlewares
 
@@ -55,26 +66,6 @@ app$get("/about", \(req, res){
 
 app$use(\(req, res){
   req$get(x)
-})
-
-app$start()
-```
-
-## Agris
-
-The [agris](https://github.com/devOpifex/agris) set of middlewares
-to improve the security of your applications.
-
-```r
-library(agris)
-library(ambiorix)
-
-app <- Ambiorix$new()
-
-app$use(agris())
-
-app$get("/", \(req, res){
-  res$send("Using {ambiorix}!")
 })
 
 app$start()
