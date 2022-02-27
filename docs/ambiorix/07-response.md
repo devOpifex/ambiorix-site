@@ -2,6 +2,17 @@
 
 Every route (`get`, `post`, etc.) handler should accept the request (`req`) and the response (`res`). Note that routes may optionally accept a different handler for errors.
 
+::: tip
+
+In the early very of the response was a locked environment so
+one could only read from it.
+Now, the environment is not locked and variables can be added
+to the response, e.g.: `res$x <- 1L`.
+This is useful to use with middlewares so one can set variables
+in one place and pick up at specific paths.
+
+:::
+
 ## HTML
 
 One can send plain HTML with `send`.
@@ -29,7 +40,7 @@ An `.html` or `.R` file can also be used as response.
 ```r
 # sends templates/home.html
 app$get("/file", \(req, res){
-  res$send_file("home")
+  res$send_file("home.html")
 })
 ```
 
@@ -41,7 +52,7 @@ An `.html` or `.R` file can also be rendered. The difference with `send_file` is
 # renders templates/home.html
 # replaces [% title %]
 app$get("/:book", \(req, res){
-  res$render("home", data = list(title = req$params$book))
+  res$render("home.html", data = list(title = req$params$book))
 })
 ```
 

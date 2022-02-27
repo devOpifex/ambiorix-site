@@ -66,7 +66,7 @@ app <- Ambiorix$new()
 
 # homepage
 app$get("/", \(req, res){
-  res$send_file("home")
+  res$send_file("home.html")
 })
 
 app$get("/randomize", \(req, res){

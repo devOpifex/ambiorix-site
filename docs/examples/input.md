@@ -2,12 +2,7 @@
 
 The idea in this example is not to just reproduce the functionalities of a shiny application with ambiorix but also to do so using the same technology: websockets, even though one may not want to go about it this way in ambiorix.
 
-<!-- panels:start -->
-<!-- div:title-panel -->
-
 ## Shiny
-
-<!-- div:left-panel -->
 
 ```r
 library(shiny)
@@ -27,13 +22,9 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 ```
 
-<!-- div:right-panel -->
-
 Here we build a shiny application that takes a text input, upon clicking a button sends that value to the server which uses it to update another text input.
 
 ![](../_assets/shiny-input.gif)
-
-<!-- panels:end -->
 
 ## Ambiorix
 
@@ -51,7 +42,7 @@ app$static("assets", "static")
 
 # homepage
 app$get("/", \(req, res){
-  res$send_file("home")
+  res$send_file("home.html")
 })
 
 # websocket 

@@ -24,5 +24,12 @@ installed from Github with the
 
 ```r
 # install.packages("remotes")
-remotes::install_github("JohnCoene/ambiorix")
+remotes::install_github("devOpifex/ambiorix")
+```
+
+Alternatively use [devtools](https://github.com/r-lib/devtools).
+
+```r
+# install.packages("devtools")
+devtools::install_github("devOpifex/ambiorix")
 ```

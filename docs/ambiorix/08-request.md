@@ -3,6 +3,15 @@
 This details the request object, generally the first argument
 of the functions passed to paths (`app$get("/", \(req, res){})`).
 
+::: tip
+
+In the early very of the request was a locked environment so
+one could only read from it.
+Now, the environment is not locked and variables can be added
+to the response, e.g.: `req$x <- 1L`.
+
+:::
+
 ## Object
 
 Easiest to see what is available is to `print` the object.

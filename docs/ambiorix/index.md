@@ -1,7 +1,7 @@
 # ambiorix
 
 <!-- badges: start -->
-[![R build status](https://github.com/JohnCoene/ambiorix/workflows/R-CMD-check/badge.svg)](https://github.com/JohnCoene/ambiorix/actions)
+[![R build status](https://github.com/devOpifex/ambiorix/workflows/R-CMD-check/badge.svg)](https://github.com/devOpifex/ambiorix/actions)
 <!-- badges: end -->
 
 Web framework for R inspired by [express.js](https://github.com/expressjs/express).
@@ -37,6 +37,6 @@ Deploy using the Belgic server, Docker, as a service, etc.
 
 - [belgic](https://github.com/devOpifex/belgic) Load balancer
 - [packer](https://github.com/JohnCoene/packer) JavaScript
-- [CLI](https://github.com/JohnCoene/ambiorix-cli) CLI for generator
-- [Generator](https://github.com/JohnCoene/ambiorix.generator) Project generator
+- [CLI](https://github.com/devOpifex/ambiorix-cli) CLI for generator
+- [Generator](https://github.com/devOpifex/ambiorix.generator) Project generator
 - [Docker](https://hub.docker.com/r/jcoenep/ambiorix) Docker image
