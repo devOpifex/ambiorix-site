@@ -6,7 +6,7 @@ performances of said deployed applicatoin.
 
 It is to Ambiorix what shiny-server is to shiny.
 
-::: tip 
+:::tip 
 
 Belgic also works with shiny applications.
 

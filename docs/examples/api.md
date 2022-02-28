@@ -21,7 +21,9 @@ app$get("/", \(req, res){
   datasets <- subset(datasets, !grepl("[[:space:]]", datasets$Item)) 
 
   # add links
-  datasets$Endpoint <- sprintf("http://127.0.0.1:%s/dataset/%s", PORT, datasets$Item)
+  datasets$Endpoint <- sprintf(
+    "http://127.0.0.1:%s/dataset/%s", PORT, datasets$Item
+  )
   datasets$Endpoint <- sapply(datasets$Endpoint, URLencode)
   res$json(datasets[, c("Item", "Title", "Endpoint")])
 })

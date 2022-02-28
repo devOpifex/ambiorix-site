@@ -9,41 +9,33 @@ app$is_running
 
 You can start the server with.
 
-<!-- tabs:start -->
-
-#### ** CLI **
+#### CLI
 
 ```bash
 ambiorix-cli start
 ```
 
-#### ** R **
+#### R
 
 ```r
 # stop all servers
 app$start()
 ```
 
-<!-- tabs:end -->
-
 You can stop all servers with.
 
-<!-- tabs:start -->
-
-#### ** CLI **
+#### CLI
 
 ```bash
 ambiorix-cli stop
 ```
 
-#### ** R **
+#### R
 
 ```r
 # stop all servers
 stop_all()
 ```
-
-<!-- tabs:end -->
 
 By default ambiorix stops the server when the `start` method closes, setting `auto_close` prevents that, the severs can then be stopped with the `stop` method.
 

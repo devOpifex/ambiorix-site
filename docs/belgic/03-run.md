@@ -33,14 +33,14 @@ systemctl daemon-reload
 You can then start and enable the service, again, you might have to run it as `sudo`.
 
 ```bash
-systemctl start ambiorix
-systemctl enable ambiorix
+systemctl start belgic
+systemctl enable ambiorie
 ```
 
 :::caution
 
 Currently, the load balancer does not restart when the app
 or any of the file change so after a deploy you _may have to_
-run `systemctl start ambiorix`
+run `systemctl restart ambiorix`
 
 :::

@@ -2,7 +2,7 @@
 
 The easiest way to get setup is by creating an ambiorix project. This will setup a static directory, 404 page, websockets, etc.
 
-::: tip
+:::tip
 
 The latest version of the CLI and the generator package include
 which use the latest version of ambiorix allow creating an ambiorix
@@ -58,7 +58,7 @@ This creates a directory with the following file structure.
 
 A project allows using templates and rendering them with `res$render`. 
 
-::: danger Breaking Change
+:::danger Breaking Change
 
 In older versions of ambiorix templates had to be placed in a 
 `templates` directory, this is no longer the case.

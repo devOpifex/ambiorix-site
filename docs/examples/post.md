@@ -15,7 +15,9 @@ app$get("/", \(req, res){
   # sends to /submit
   form <- tagList(
     tags$form(
-      action = "/submit", enctype = "multipart/form-data", method = "POST",
+      action = "/submit", 
+      enctype = "multipart/form-data", 
+      method = "POST",
       p(
         tags$label(`for` = "first_name", "First Name"),
         tags$input(type = "text", name = "first_name")

@@ -2,12 +2,7 @@
 
 Here we demonstrate how to reproduce a basic shiny application with ambiorix: a simple app which at the click of a button fits a polynomial to randomly generated data, this is visualised with [plotly](https://plotly-r.com/).
 
-<!-- panels:start -->
-<!-- div:title-panel -->
-
 ## Shiny
-
-<!-- div:left-panel -->
 
 ```r
 library(shiny)
@@ -40,15 +35,11 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-<!-- div:right-panel -->
-
 The ui consists of a button and the `plotlyOutput`.
 
 In the server we place `input$randomize` in the `renderPlotly` function so it retriggers that expression.
 
 ![](../_assets/shiny-plotly.gif)
-
-<!-- panels:end -->
 
 ## Ambiorix
 

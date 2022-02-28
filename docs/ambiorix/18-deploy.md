@@ -10,6 +10,13 @@ on a dynamic port unknown at run time.
 
 :::
 
+## Belgic
+
+There is now a load balancer for ambiorix applications so
+one can serve concurrent users with ease.
+The load balancer is documented [here](/docs/belgic).
+
+
 ## Service
 
 The application can be deployed as a service on any Linux server. Create a new `.service` in the `/etc/systemd/system/` directory.

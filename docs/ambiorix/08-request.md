@@ -3,7 +3,7 @@
 This details the request object, generally the first argument
 of the functions passed to paths (`app$get("/", \(req, res){})`).
 
-::: tip
+:::tip
 
 In the early very of the request was a locked environment so
 one could only read from it.

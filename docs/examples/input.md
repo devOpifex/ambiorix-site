@@ -42,7 +42,7 @@ app$static("assets", "static")
 
 # homepage
 app$get("/", \(req, res){
-  res$send_file("home.html")
+  res$send_file("templates/home.html")
 })
 
 # websocket 

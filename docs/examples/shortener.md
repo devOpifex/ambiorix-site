@@ -57,7 +57,7 @@ URLs <- data.frame()
 
 # render homepage
 render_home <- \(req, res){
-  res$send_file("home.html")
+  res$send_file("templates/home.html")
 }
 
 # render redirect
