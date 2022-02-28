@@ -114,8 +114,22 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['r', 'javascript']
+        additionalLanguages: ['r', 'javascript', 'bash']
       },
+      metadata: [
+        {name: 'keywords', content: 'ambiorix,r,rstats,web framework'},
+        {name: 'description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {name: 'twitter:site', content: '@devOpifex'},
+        {name: 'twitter:creator', content: '@JohnCoene'},
+        {name: 'twitter:title', content: 'Ambiorix'},
+        {name: 'twitter:description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
+        {name: 'twitter:image', content: 'https://ambiorix.dev/img/banner.png'},
+        {name: 'og:title', content: 'Ambiorix'},
+        {name: 'og:description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
+        {name: 'og:image', content: 'https://ambiorix.dev/img/banner.png'},
+        {name: 'og:url', content: 'https://ambiorix.dev/'},
+      ],
     }),
 };
 
