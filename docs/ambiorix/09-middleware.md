@@ -9,9 +9,10 @@ from them.
 
 :::
 
-## Middlewares
+## Existing Middlewares
 
-List of existing middleswares.
+List of existing middleswares. See the [documentation](/docs/middlewares)
+for more details.
 
 - [druid](https://github.com/devOpifex/druid) Logger
 - [alesia](https://github.com/devOpifex/alesia) Minifier

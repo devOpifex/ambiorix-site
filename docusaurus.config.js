@@ -53,6 +53,7 @@ const config = {
           {to: '/docs/belgic', label: 'Belgic', position: 'left'},
           {to: '/docs/generator', label: 'Generator', position: 'left'},
           {to: '/docs/cli', label: 'CLI', position: 'left'},
+          {to: '/docs/middlewares', label: 'Middlewares', position: 'left'},
           {to: '/docs/examples', label: 'Examples', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
