@@ -116,7 +116,7 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['r', 'javascript', 'bash']
       },
-      image: 'img/banner.png',
+      image: '/img/banner.png',
       metadata: [
         {name: 'keywords', content: 'ambiorix,r,rstats,web framework'},
         {name: 'description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
