@@ -32,12 +32,12 @@ Deploy using the Belgic server, Docker, as a service, etc.
 - [alesia](https://github.com/devOpifex/alesia) Minifier
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
+- [titan](https://titan.opifex.org/) Prometheus metrics
 
 ## Tools & Extensions
 
 - [belgic](https://github.com/devOpifex/belgic) Load balancer
 - [packer](https://github.com/JohnCoene/packer) JavaScript
-- [titan](https://titan.opifex.org/) Prometheus metrics
 - [CLI](https://github.com/devOpifex/ambiorix-cli) CLI for generator
 - [Generator](https://github.com/devOpifex/ambiorix.generator) Project generator
 - [Docker](https://hub.docker.com/r/jcoenep/ambiorix) Docker image
