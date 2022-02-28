@@ -119,7 +119,7 @@ const config = {
       metadata: [
         {name: 'keywords', content: 'ambiorix,r,rstats,web framework'},
         {name: 'description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
-        {name: 'twitter:card', content: 'summary'},
+        {name: 'twitter:card', content: 'summary_large_image'},
         {name: 'twitter:site', content: '@devOpifex'},
         {name: 'twitter:creator', content: '@JohnCoene'},
         {name: 'twitter:title', content: 'Ambiorix'},
