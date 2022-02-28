@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Syntax',
+    title: 'One Syntax',
     img: require('../../static/img/celts1.jpg').default,
     description: (
       <>
