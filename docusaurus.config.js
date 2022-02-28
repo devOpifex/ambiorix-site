@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -46,7 +46,7 @@ const config = {
         title: 'Ambiorix',
         logo: {
           alt: 'Ambiorix',
-          src: 'img/logo.svg',
+          src: 'img/ambiorix.png',
         },
         items: [
           {to: '/docs/ambiorix', label: 'Package', position: 'left'},
@@ -71,6 +71,18 @@ const config = {
                 label: 'Ambiorix',
                 to: '/docs/ambiorix',
               },
+              {
+                label: 'Middlewares',
+                to: 'docs/ambiorix/middleware',
+              },
+              {
+                label: 'Belgic',
+                to: '/docs/belgic',
+              },
+              {
+                label: 'CLI',
+                to: '/docs/cli',
+              },
             ],
           },
           {
@@ -91,7 +103,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/devOpifex/ambiorix',
               },
             ],
           },
