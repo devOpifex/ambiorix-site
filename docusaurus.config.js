@@ -30,7 +30,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/devOpifex/ambiorix-site/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -56,7 +56,7 @@ const config = {
           {to: '/docs/middlewares', label: 'Middlewares', position: 'left'},
           {to: '/docs/examples', label: 'Examples', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/devOpifex/ambiorix',
             label: 'GitHub',
             position: 'right',
           },
