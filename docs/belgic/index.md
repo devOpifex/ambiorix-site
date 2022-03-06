@@ -4,7 +4,7 @@
 
 Belgic is a reverse proxy and load balancer that will ease 
 the deployment of an application on as well as improve
-performances of said deployed applicatoin.
+performances of said deployed application.
 
 __Note that it also works for a shiny application__
 
