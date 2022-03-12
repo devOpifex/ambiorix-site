@@ -10,8 +10,11 @@ it allows multiple pages one is likely to make use of those instead.
 
 :::tip
 
-Designing applications will, in all likelihood, always be faster with
-Shiny.
+Designing single page applications will, in all likelihood, 
+always be faster with Shiny.
+This is because shiny takes care of much of the front-end for the developer
+(pre-built inputs, Bootstrap UI, etc.), while ambiorix is unopinionated
+and thus handles none of this for you.
 
 :::
 

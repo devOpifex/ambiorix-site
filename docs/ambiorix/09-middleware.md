@@ -18,6 +18,7 @@ for more details.
 - [alesia](https://github.com/devOpifex/alesia) Minifier
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
+- [scilis](https://github.com/devOpifex/scilis) Cookies
 
 _Feel free to make a PR to add to the list._
 
