@@ -2,6 +2,35 @@
 
 ## ambiorix 2.0.0.9000
 
+__Breaking__
+
+- `Response` method `status` renamed to `set_status`
+(this is to allow having `status` as a field).
+- Dumped support for `.R` templates. These were processed
+with bare evals and were thus very insecure.
+
+__Changes__
+
+- Improve rendering of templates.
+No longer force render data as JSON if using an HTML template.
+- Allow nested partials, their path must be relative.
+- Added `jobj` function to serialise objects to JSON in `render`.
+- Allow passing `host` and `port` to `start()` method.
+- Added `host` and `port` active bindings.
+- Move internal `is_running` field to private.
+- Added `status` active binding on `Response`.
+- Added `get_header`, `set_header`, and `set_headers` to `Response`.
+- Allow adding multiple cookies to the request.
+- Add `parseCookie` JavaScript helper function to JavaScript file.
+- Allow customising the cookie parser with `as_cookie_parser`.
+- Allow adding cookie value preprocessors with `as_cookie_preprocessor`.
+- Arguments to `cookie` method on `Response` take options.
+- Added `clear_cookie` method to `Response`
+- Cookies of the same name overwrite rather than duplicate.
+- Added `content_*` family of convenience function to set content type headers.
+
+## ambiorix 2.0.0
+
 __Breaking change__
 
 The `render` and `send_file` methods of the `Response` object now
@@ -10,8 +39,7 @@ Where one would before `res$render("home")`, now one
 `res$render("templates/home.html")`.
 Similarly, in said templates, to import partials, 
 use full path relative to the template in which the partial is used
-e.g.: from `[! header.html !]` to 
-`[! partials/header.html !]`.
+e.g.: from `[! header.html !]` to `[! partials/header.html !]`.
 
 __Changes__
 
@@ -54,7 +82,7 @@ with `sprintf`.
 - Added `md` method to `Response` to render `.md` files.
 - Added `set_log*` functions to allow using custom logs.
 
-# ambiorix 1.0.2
+## ambiorix 1.0.2
 
 - Reaches CRAN
 - Removed `create_ambiorix`, see [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator).
@@ -62,7 +90,7 @@ with `sprintf`.
 - Deprecate the `Logger` class in favour of the [log](https://github.com/devOpifex/log) package.
 - Fixed `parse_json` [#36](https://github.com/devOpifex/ambiorix/issues/36)
 
-# ambiorix 1.0.1
+## ambiorix 1.0.1
 
 - Deprecate `create_ambiorix`: moving to [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator) package.
 - Deprecate `add_template`: moving to [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator) package.
