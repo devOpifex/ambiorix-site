@@ -96,7 +96,7 @@ res$render("home.html", data = list(title = "Hello from R"))
 
 ## Markdown
 
-One cam use markdown templates (`.md` files).
+One can use markdown templates (`.md` files).
 
 ```md
 # [% title %]
