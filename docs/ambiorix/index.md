@@ -6,32 +6,13 @@
 
 Web framework for R inspired by [express.js](https://github.com/expressjs/express).
 
-## Features
-
-Ambiorix is unopinionated giving you flexibility. 
-
-### Web Apps
-
-Build multi-page or single-page web applications.
-
-### APIs
-
-Quickly build web RESTful APIs.
-
-### Websocket
-
-Support for bidirectional websocket communication.
-
-### Easy to deploy
-
-Deploy using the Belgic server, Docker, as a service, etc.
-
 ## Middlewares
 
 - [druid](https://github.com/devOpifex/druid) Logger
 - [alesia](https://github.com/devOpifex/alesia) Minifier
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
+- [scilis](https://github.com/devOpifex/scilis) Cookies
 - [titan](https://titan.opifex.org/) Prometheus metrics
 
 ## Tools & Extensions
