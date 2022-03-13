@@ -67,97 +67,9 @@ their extension in the `render` or `send_file` methods.
 
 :::
 
-### R
-
-The following template file is written with the [htmltools](https://CRAN.R-project.org/package=htmltools) package and contains a `[% tag %]`.
-
-```r
-# home.R
-library(htmltools)
-
-tags$html(
-  lang = "en",
-  tags$head(
-    tags$meta(charset= "UTF-8"),
-    tags$meta(
-      name = "viewport", 
-      content = "width=device-width, initial-scale=1.0"
-    ),
-    tags$link(
-      rel = "stylesheet", 
-      href = "static/style.css"
-    ),
-    tags$title("Ambiorix")
-  ),
-  tags$body(
-    tags$h1("[% title %]")
-  )
-)
-```
-
-The `[% title %]` in the template above can then be replaced with.
-
-```r
-res$render("home.html", data = list(title = "Hello from R"))
-```
-
-R objects can also be passed by wrapping them in `robj()` which indicate the object should be used as-is: internally ambiorix will use `dput`. This can be used to generate objects that will subsequently be used in the template.
-
-```r
-# home.R
-library(htmltools)
-
-dataset <- [% df %]
-
-tags$html(
-  lang = "en",
-  tags$head(
-    tags$meta(charset= "UTF-8"),
-    tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0"),
-    tags$link(rel = "stylesheet", href = "static/style.css"),
-    tags$title("Ambiorix")
-  ),
-  tags$body(
-    tags$pre(
-      tags$code(
-        jsonlite::toJSON(dataset)
-      )
-    )
-  )
-)
-```
-
-```r
-res$render("home.R", data = list(df = robj(cars)))
-```
-
-Since the `[% tags %]` are internally passed to `glue::glue_data` __they can include R code__.
-
-```r
-# home.R
-library(htmltools)
-
-tags$html(
-  lang = "en",
-  tags$head(
-    tags$meta(charset= "UTF-8"),
-    tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0"),
-    tags$link(rel = "stylesheet", href = "static/style.css"),
-    tags$title("Ambiorix")
-  ),
-  tags$body(
-    tags$h1("[% if(x) 'Hello' else 'Bye!' %]")
-  )
-)
-```
-
-```r
-res$render("home.R", data = list(x = TRUE))
-```
-
 ### HTML
 
-One can also use HTML templates (`.html` files) in which case the data is serialised to JSON. This also uses `glue::glue_data` internally.
+One cam use HTML templates (`.html` files).
 
 ```html
 <!-- templates/home.html -->
@@ -180,6 +92,24 @@ This is rendered with the same method.
 
 ```r
 res$render("home.html", data = list(title = "Hello from R"))
+```
+
+## Markdown
+
+One cam use markdown templates (`.md` files).
+
+```md
+# [% title %]
+
+A list
+
+- 1
+- 2
+- 3
+```
+
+```r
+res$render("home.md", data = list(title = "Hello from R"))
 ```
 
 ### Partials
