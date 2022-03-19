@@ -20,7 +20,6 @@ We do a simplified version of it, without a database; everything is stored local
 
 ```r
 library(ambiorix)
-import("views")
 
 PORT <- 5000
 
