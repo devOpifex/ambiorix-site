@@ -124,6 +124,7 @@ const config = {
         {name: 'twitter:site', content: '@devOpifex'},
         {name: 'twitter:creator', content: '@JohnCoene'},
         {name: 'twitter:title', content: 'Ambiorix'},
+        {name: 'twitter:image', content: 'https://ambiorix.dev/img/banner.png'},
         {name: 'twitter:description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
         {name: 'og:title', content: 'Ambiorix'},
         {name: 'og:description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
