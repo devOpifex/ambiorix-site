@@ -6,6 +6,10 @@
 
 Web framework for R inspired by [express.js](https://github.com/expressjs/express).
 
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/owpbIQ-j6Kk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Middlewares
 
 - [druid](https://github.com/devOpifex/druid) Logger
@@ -13,6 +17,8 @@ Web framework for R inspired by [express.js](https://github.com/expressjs/expres
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
 - [scilis](https://github.com/devOpifex/scilis) Cookies
+- [slighe](https://github.com/devOpifex/slighe) Pattern matching
+- [signaculum](https://github.com/devOpifex/signaculum) favicon
 - [titan](https://titan.opifex.org/) Prometheus metrics
 
 ## Tools & Extensions

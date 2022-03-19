@@ -19,6 +19,7 @@ for more details.
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
 - [scilis](https://github.com/devOpifex/scilis) Cookies
+- [slighe](https://github.com/devOpifex/slighe) Pattern matching
 
 _Feel free to make a PR to add to the list._
 
