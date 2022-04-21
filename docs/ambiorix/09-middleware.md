@@ -19,7 +19,11 @@ for more details.
 - [eburones](https://github.com/devOpifex/eburones) Sessions
 - [agris](https://github.com/devOpifex/druid) Security
 - [scilis](https://github.com/devOpifex/scilis) Cookies
-- [slighe](https://github.com/devOpifex/slighe) Pattern matching
+- [titan](https://github.com/devOpifex/titan) Prometheus middleware
+- [surf](https://github.com/devOpifex/surf) CSRF protection
+- [signaculum](https://github.com/devOpifex/signaculum) favicon
+- [pugger](https://github.com/devOpifex/pugger) Pug engine
+- [jader](https://github.com/devOpifex/jader) Jade engine
 
 _Feel free to make a PR to add to the list._
 
