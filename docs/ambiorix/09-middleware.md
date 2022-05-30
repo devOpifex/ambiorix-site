@@ -24,6 +24,7 @@ for more details.
 - [signaculum](https://github.com/devOpifex/signaculum) favicon
 - [pugger](https://github.com/devOpifex/pugger) Pug engine
 - [jader](https://github.com/devOpifex/jader) Jade engine
+- [slighe](https://github.com/devOpifex/slighe) Pattern matching
 
 _Feel free to make a PR to add to the list._
 

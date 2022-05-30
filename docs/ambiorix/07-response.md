@@ -23,6 +23,13 @@ app$get("/html", \(req, res){
 })
 ```
 
+You can change the renderer by either creating your own
+middleware or use one of the existing ones:
+
+- `use_html_template()` htmltools template engine
+- [pugger](https://github.com/devOpifex/pugger) Pug engine
+- [jader](https://github.com/devOpifex/jader) Jade engine
+
 ## Text
 
 One can send a plain text with `text`.
