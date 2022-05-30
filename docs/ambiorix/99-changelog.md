@@ -1,13 +1,19 @@
 # Changelog
 
-## ambiorix 2.0.0.9000
+## ambiorix 2.1.0.9000
+
+- Added `cache_templates` method to cache templates
+in memory.
+- Added `use_html_template` to use `htmltools::htmlTemplate` as
+rendering.
+- Custom renderers (`as_renderer`) are now more robust.
+
+## ambiorix 2.1.0
 
 __Breaking__
 
 - `Response` method `status` renamed to `set_status`
 (this is to allow having `status` as a field).
-- Dumped support for `.R` templates. These were processed
-with bare evals and were thus very insecure.
 
 __Changes__
 
@@ -28,6 +34,38 @@ No longer force render data as JSON if using an HTML template.
 - Added `clear_cookie` method to `Response`
 - Cookies of the same name overwrite rather than duplicate.
 - Added `content_*` family of convenience function to set content type headers.
+- Export `serialise`
+- Fixed issue where wrong path pattern was matched.
+- Catch error if no route is specified.
+- Do not force body to character fixes [#44](https://github.com/devOpifex/ambiorix/issues/44)
+- Do no force content type on response fixes [#45](https://github.com/devOpifex/ambiorix/issues/45)
+- Deprecate passing headers to `response` or `send`-like functions, use
+`header` method.
+- Deprecate `set_header` in favour of `header` method.
+- Added family of `header_content*` methods to easily set `Content-Type`.
+- Request `HEADERS` is always a `list`.
+- Deprecate `set` and `get` on Response and Request, this is no longer 
+needed the environments are no longer locked; `res$myVar <- 2L`.
+- Deprecate `status` argument of responses, the active binding should 
+be used instead; `res$status <- 404L`.
+- Partially improved route matching.
+- Allow customising the path to pattern converter.
+- Added `get_header` method to the retrieve a specific method.
+- Fix htmlwidget response.
+- Added `image`, `png` and `jpeg` methods to `Response` to serve images.
+- Added `ggplot2` method to `Response`.
+- Allow `use` method on `Router` these will only be applied to paths
+of said router.
+- Added `parse_*` methods to the `Request`.
+- Cookie `path` defaults to `/`.
+- Fix default serialiser
+- More robust `parser_*` methods and fuctions.
+- Empty cookie is empty list instead of empty string.
+- Added `mockRequest` to for testing purposes.
+- Fixed `port`, `host`, and `websocket` active bindings.
+- Add ability to create custom renderer, see 
+[jader](https://github.com/devOpifex/jader), and 
+[pugger](https://github.com/devOpifex/pugger).
 
 ## ambiorix 2.0.0
 

@@ -35,11 +35,15 @@ This creates a directory with the following file structure.
 ```
 .
 ├── DESCRIPTION
+├── NAMESPACE
 ├── R
+│   ├── about.R
 │   ├── assets.R
 │   ├── build.R
+│   ├── contact.R
 │   ├── docs.R
-│   └── views.R
+│   ├── error.R
+│   └── home.R
 ├── app.R
 └── inst
     ├── assets
@@ -47,9 +51,8 @@ This creates a directory with the following file structure.
     │   └── style.css
     └── templates
         ├── 404.html
-        ├── file.R
-        ├── file.html
-        ├── file.md
+        ├── contact.html
+        ├── home.html
         └── partials
             └── header.html
 ```
