@@ -28,7 +28,7 @@ for more details.
 
 _Feel free to make a PR to add to the list._
 
-## Using middlewares
+## Creating middlewares
 
 Below we add a middleware that simply print the time at which the request is recevied.
 
@@ -60,20 +60,15 @@ library(ambiorix)
 app <- Ambiorix$new()
 
 app$use(\(req, res){
-  req$set(x, 1) # set x to 1
-})
-
-app$get("/", \(req, res){
-  print(req$get(x)) # retrieve x from the request
-  res$send("Using {ambiorix}!")
-})
-
-app$get("/about", \(req, res){
-  res$text("About")
+  req$x <- 1 # set x to 1
 })
 
 app$use(\(req, res){
-  req$get(x)
+  print(req$x)
+})
+
+app$get("/", \(req, res){
+  res$sendf("x set to %s", req$x)
 })
 
 app$start()

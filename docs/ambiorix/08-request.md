@@ -66,52 +66,31 @@ Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0"
 
 To access the `HEADERS` for instance, simple do `req$HEADERS`.
 
-## Set & Get
+## Bind
 
-This is mainly useful with middlewares, you can `set` and `get` values
-on requests.
+:::tip
 
-For instance below we use the middleware to set a variable `x` on the
-request object, and we retrieve it when someone accesses the homepage.
+In the early very of the response was a locked environment so
+one could only read from it.
+Now, the environment is not locked and variables can be added
+to the response, e.g.: `req$x <- 1L`.
 
-```r
-app <- Ambiorix$new()
+:::
 
-app$use(\(req, res){
-  # set
-  req$set(x, "John")
-})
-
-app$get("/", \(req, res){
-  # get
-  print(req$get(x))
-  res$sen("Hello {ambiorix}")
-})
-
-app$start()
-```
-
-__Lock__
-
-You can also lock some of these values (internally these are stored in an
-environment), this ensures the value cannot be modified later on.
-Therefore the example below fails, `x` cannot be retrived.
+Make sure you do not overwrite existing data.
 
 ```r
 app <- Ambiorix$new()
 
 app$use(\(req, res){
   # set
-  req$set(x, "John", lock = TRUE)
+  req$user <- "John"
 })
 
 app$get("/", \(req, res){
-  # will fail
-  req$set(x, "Bob")
-
   # get
-  print(req$get(x))
-  res$sen("Hello {ambiorix}")
+  print(req$user)
+  res$send("Hello {ambiorix}")
 })
 
 app$start()
@@ -119,7 +98,8 @@ app$start()
 
 __Counter__
 
-This is an example of creating a counter; every refresh bumps the counter.
+This is an example of creating a counter; every refresh bumps the counter,
+using a middleware means we cound visits overall, not just to the main page.
 
 ```r
 app <- Ambiorix$new()
@@ -128,13 +108,19 @@ val <- 0L
 
 app$use(\(req, res){
   val <<- val + 1L
-  req$set(x, val)
+  req$x <- val
 })
 
 app$get("/", \(req, res){
   res$send_sprintf(
     "Count %s",
-    req$get(x)
+    req$x
+  )
+})
+
+app$get("/add", \(req, res){
+  res$send_sprintf(
+    "Added one!",
   )
 })
 

@@ -1,4 +1,4 @@
-# pugger
+# Pugger
 
 Use the [pug](https://github.com/pugjs/pug)
 templating engine with [ambiorix](https://ambiorix.dev).

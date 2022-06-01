@@ -1,4 +1,4 @@
-# Ambiorix
+# Titan
 
 [Prometheus](https://prometheus.io/) metrics for ambiorix.
 

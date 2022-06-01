@@ -1,4 +1,4 @@
-# signaculum
+# Signaculum
 
 Caches favicons for [ambiorix](https://ambiorix.dev).
 

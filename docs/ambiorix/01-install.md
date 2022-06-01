@@ -33,3 +33,6 @@ Alternatively use [devtools](https://github.com/r-lib/devtools).
 # install.packages("devtools")
 devtools::install_github("devOpifex/ambiorix")
 ```
+
+If you use r-universe, see 
+[the project's page](https://devopifex.r-universe.dev/ui#package:ambiorix)

@@ -1,4 +1,4 @@
-# slighe
+# Slighe
 
 Improved path matching for [ambiorix](https://ambiorix.dev) with
 [path-to-regexp](https://www.npmjs.com/package/path-to-regexp)

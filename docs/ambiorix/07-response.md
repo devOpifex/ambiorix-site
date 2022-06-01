@@ -2,17 +2,6 @@
 
 Every route (`get`, `post`, etc.) handler should accept the request (`req`) and the response (`res`). Note that routes may optionally accept a different handler for errors.
 
-:::tip
-
-In the early very of the response was a locked environment so
-one could only read from it.
-Now, the environment is not locked and variables can be added
-to the response, e.g.: `res$x <- 1L`.
-This is useful to use with middlewares so one can set variables
-in one place and pick up at specific paths.
-
-:::
-
 ## HTML
 
 One can send plain HTML with `send`.
@@ -26,7 +15,7 @@ app$get("/html", \(req, res){
 You can change the renderer by either creating your own
 middleware or use one of the existing ones:
 
-- `use_html_template()` htmltools template engine
+- `use_html_template()` [htmltools template engine](https://shiny.rstudio.com/articles/templates.html)
 - [pugger](https://github.com/devOpifex/pugger) Pug engine
 - [jader](https://github.com/devOpifex/jader) Jade engine
 
@@ -119,7 +108,7 @@ app$get("/tsv", \(req, res){
 })
 ```
 
-## htmlwidget
+## htmlwidgets
 
 Serialises an htmlwidget.
 

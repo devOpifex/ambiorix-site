@@ -1,6 +1,10 @@
 # Routing
 
-When a client (web browser) points to a path (e.g.: `/about`) a request is made to the server (`GET` in this case), ambiorix then looks through the handlers __in the order they were added__ and when it finds one that matches the requested path runs the handler function (`\(req, res)`). This function should return a response (using the `res` object) or a future (see asynchronous programming).
+When a client (web browser) points to a path (e.g.: `/about`) a request is made
+to the server (`GET` in this case), ambiorix then looks through the handlers
+for a matching path and runs the respective handler function (`\(req, res)`).
+This function should return a response (using the `res` object) or a future
+(see asynchronous programming).
 
 ```r
 library(ambiorix)
@@ -18,7 +22,7 @@ app$get("/about", \(req, res){
 app$start()
 ```
 
-In the app above when the client (browser) points to `/about` the server goes over the handlers in the order they are specified looking for a match, the first `/` does not match, the second `/about` does; it therefore runs the `handler` which sends a response back.
+In the app above when the client (browser) points to `/about` the server goes over the handlers in the order they are specified looking for a match, the first `/` does not match, the second `/about` does; it therefore runs that handler which sends a response back.
 
 ## Handler
 
@@ -64,4 +68,4 @@ app$start()
 
 If no route match the requested path then ambiorix runs the `404`/`not_found` handler, see not found. 
 
-Routing is crucial to ambiorix, it therefore also comes with a router to better structure complex routing for large applications.
+Routing is crucial to ambiorix, therefore it also comes with a router to better structure complex routing for large applications.
