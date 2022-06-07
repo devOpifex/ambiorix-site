@@ -30,3 +30,9 @@ app$get("/", \(req, res){
 
 app$start()
 ```
+
+:::caution
+
+All files in the directory are exposed, do not put any sensitive files in there.
+
+:::

@@ -46,7 +46,8 @@ library(ambiorix)
 app <- Ambiorix$new(log = FALSE)
 app$use(
   druid(
-    
+    path_info = TRUE,
+    remote_port = TRUE 
   )
 )
 
