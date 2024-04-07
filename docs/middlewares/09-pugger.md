@@ -40,7 +40,7 @@ library(ambiorix)
 
 app <- Ambiorix$new()
 
-app$use(pugger::pugger())
+app$engine(pugger::pugger())
 
 app$get("/", \(req, res) {
   res$render(

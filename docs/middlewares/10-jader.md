@@ -42,7 +42,7 @@ library(ambiorix)
 
 app <- Ambiorix$new()
 
-app$use(jader::jader())
+app$engine(jader::jader())
 
 app$get("/", \(req, res) {
   res$render(
