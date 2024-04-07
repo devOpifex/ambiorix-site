@@ -73,3 +73,18 @@ app$get("/", \(req, res){
 
 app$start()
 ```
+
+## Common Pattern
+
+Existing middlewares tend to use function factories, which is useful if you want to
+package of write reusable middleware.
+
+```r
+middleware <- \(prefix){
+  \(req, res){
+    cat(PREFIX, "-log\n")
+  }
+}
+
+app$use(middleware("PREFIX"))
+```
