@@ -4,7 +4,7 @@ Every route (`get`, `post`, etc.) handler should accept the request (`req`) and 
 
 ## HTML
 
-One can send plain HTML with `send`.
+Send plain HTML with `send`.
 
 ```r
 app$get("/html", \(req, res){
@@ -19,9 +19,19 @@ middleware or use one of the existing ones:
 - [pugger](https://github.com/devOpifex/pugger) Pug engine
 - [jader](https://github.com/devOpifex/jader) Jade engine
 
+## Sendf
+
+A convenient wrapper around `sprintf` and the `send`.
+
+```r
+app$get("/text", \(req, res){
+  res$sendf("Hello %s", req$user)
+})
+```
+
 ## Text
 
-One can send a plain text with `text`.
+Send a plain text with `text`.
 
 ```r
 app$get("/text", \(req, res){
