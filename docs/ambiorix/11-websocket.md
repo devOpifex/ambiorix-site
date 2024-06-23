@@ -70,7 +70,7 @@ Here we put in practice all that was explained in the previous sections. This ex
   <script src="static/ambiorix.js"></script>
   <script>
     var wss = new Ambiorix();
-    wss.receive("hello", \(msg){
+    wss.receive("hello", (msg) => {
       alert(msg);
     });
     wss.start();
