@@ -1,22 +1,21 @@
 # Install
 
-First, make sure you have the package installed. 
-It is not yet available on CRAN, get it from 
-[Github](https://github.com/devOpifex/ambiorix.generator).
+1. Ensure you have the [`remotes`](https://remotes.r-lib.org/) or [`devtools`](https://github.com/r-lib/devtools) package installed:
 
-Alternatively, install the development version can be 
-installed from Github with the
-[remotes](https://remotes.r-lib.org/) package.
+   ```r
+   # install.packages("remotes")
+   # or
+   # install.packages("devtools")
+   ```
 
-```r
-# install.packages("remotes")
-remotes::install_github("devOpifex/ambiorix.generator")
-```
+1. Install [`ambiorix.generator`](https://github.com/devOpifex/ambiorix.generator) from GitHub:
 
-Alternatively use [devtools](https://github.com/r-lib/devtools).
+   ```r
+   # using remotes:
+   remotes::install_github("devOpifex/ambiorix.generator")
+   ```
 
-```r
-# install.packages("devtools")
-devtools::install_github("devOpifex/ambiorix.generator")
-
-```
+   ```r
+    # or using devtools:
+    devtools::install_github("devOpifex/ambiorix.generator")
+   ```
