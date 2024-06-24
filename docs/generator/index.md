@@ -1,9 +1,7 @@
 # Generator
 
-An R package to conveniently create ambiorix projects.
+Easily generate template projects with correct file structure for ambiorix applications and APIs.
 
-It comes with just handful of functions to create projects but
-one is recommended over the others; 
-the function `create_package` creates an ambiorix project
-in the form of an R package so one can leverage all the 
-R toolchain for documenting, testing, etc.
+The package comes with 2 main functions:
+1. `create_package()`: A basic app in R package form.
+1. `create_box()`: Modular & nested app structure using [`{box}`](https://klmr.me/box/).

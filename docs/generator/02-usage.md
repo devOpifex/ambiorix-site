@@ -5,51 +5,33 @@ project.
 
 ## Package
 
-:::tip
-
-Creating an ambiorix project in the form of an R package
-is recommended as it allows you to leverage all of the R
-toolchain, such as testing, or documenting.
-
-:::
+Creating an ambiorix project as an R package allows you to leverage all of the R toolchain out of the box, such as testing, or documenting.
 
 ```r
-ambiorix.generator::create_package(
-  "myapp"
-)
+# ambiorix.generator::create_package("path-to-create-app-in")
+# eg.
+ambiorix.generator::create_package("myapp")
 ```
 
-## Project
+## Box
 
-You can also create an ambiorix project, 
-not in the form of an R package (not recommended).
+With [`{box}`](https://klmr.me/box/) you get to enjoy all the benefits of a modular & nested app structure.
 
-### Basic
-
-A basic project.
+This is ideal for large projects that benefit from a clear separation of
+concerns and better organization.
 
 ```r
-ambiorix.generator::create_basic(
-  "myapp"
-)
+# ambiorix.generator::create_box(
+#   "path-to-create-app-in",
+#   "project-type"
+# )
+# eg.
 ```
 
-### Bootstrap
-
-A bootstrap version 5 project.
-
 ```r
-ambiorix.generator::create_bootstrap(
-  "myapp"
-)
+ambiorix.generator::create_box("myapi", "backend")
 ```
 
-### Vue
-
-A project using Vue.
-
 ```r
-ambiorix.generator::create_vue(
-  "myapp"
-)
+ambiorix.generator::create_box("myapp", "frontend")
 ```
