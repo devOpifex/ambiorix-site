@@ -1,3 +1,10 @@
+# Websites  
+
+Examples of sites built using ambiorix:
+
+- [URL shortener](https://rrr.is/)
+- [Personal website](https://mwavu.com/)
+
 # Examples
 
 Useful examples to learn more about ambiorix.
@@ -10,8 +17,8 @@ Useful examples to learn more about ambiorix.
 
 # More examples
 
-Here are more examples provided by [Kennedy Mwavu](https://github.com/kennedymwavu):
-
+Explanations for these examples can be found here: [ambiorix-examples](https://kennedymwavu.github.io/ambiorix-examples/)
+ 
 1. [Hello, World!](https://github.com/kennedymwavu/ambiorix-examples/tree/main/01_hello_world)
 1. [Serving static files](https://github.com/kennedymwavu/ambiorix-examples/tree/main/02_static_files)
 1. [Basic routing](https://github.com/kennedymwavu/ambiorix-examples/tree/main/03_basic_routing)
@@ -21,12 +28,9 @@ Here are more examples provided by [Kennedy Mwavu](https://github.com/kennedymwa
 1. [Dynamic rendering](https://github.com/kennedymwavu/ambiorix-examples/tree/main/07_dynamic_rendering)
 1. [Datatables](https://github.com/kennedymwavu/ambiorix-examples/tree/main/08_datatables)
 1. [Build a CRUD backend: **Goals**](https://github.com/kennedymwavu/ambiorix-examples/tree/main/09_goals)
-
-   - Ambiorix + MongoDB
-
-   - Working with middleware:
-
-       - Auth middleware
-
-       - Error handling middleware
 1. [Live reloading](https://github.com/kennedymwavu/ambiorix-examples/tree/main/10_live_reloading)
+1. [CSV & XLSX file upload](https://github.com/kennedymwavu/ambiorix-examples/tree/main/11_csv_xlsx_upload)
+1. [Shiny frontend for the CRUD backend](https://github.com/kennedymwavu/ambiorix-examples/tree/main/12_shiny_frontend_for_09_goals)
+1. [Parsing raw JSON](https://github.com/kennedymwavu/ambiorix-examples/tree/main/13_parse_raw_json)
+1. [Allow CORS](https://github.com/kennedymwavu/ambiorix-examples/tree/main/14_cors)
+
