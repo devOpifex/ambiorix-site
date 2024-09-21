@@ -26,7 +26,7 @@ One can also instantiate the class to add handlers with `receive` method then ru
 
 ```js
 var wss = new Ambiorix();
-wss.receive("hello", \(msg){
+wss.receive("hello", (msg) => {
   alert(msg);
 });
 wss.start();
@@ -44,7 +44,7 @@ And `receive`, a method to add listeners, very much like the `receive` method in
 
 ```js
 var wss = new Ambiorix();
-wss.receive("hello", \(msg){
+wss.receive("hello", (msg) => {
   alert(msg);
 });
 ```
