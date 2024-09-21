@@ -23,10 +23,11 @@ app$start()
 In your browser, visit `/` to see the homepage, and visit
 `/about` to see the about page.
 
-## Introduction
+# Introduction
 
 There is also a short video introducing the framework.
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/owpbIQ-j6Kk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+ 
