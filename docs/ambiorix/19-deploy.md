@@ -1,124 +1,139 @@
 # Deployment
 
-These are just some of the ways in which one can deploy an ambiorix application.
-
-:::caution
-
-Remember to open the open the port used by the application on your server.
-Also remember to define a `port` in the app or it will serve
-on a dynamic port unknown at run time.
-
-:::
-
-## Belgic
-
-There is now a load balancer for ambiorix applications so
-one can serve concurrent users with ease.
-The load balancer is documented [here](/docs/belgic).
-
-
-## Service
-
-The application can be deployed as a service on any Linux server. Create a new `.service` in the `/etc/systemd/system/` directory.
-
-:::note
-
-The name of the file defines the name of the service.
-
-:::
-
-```bash
-vim /etc/systemd/system/ambiorix.service
-```
-
-In that `.service` file place the following, it creates a service that runs the application at the defined path (`path/to/app`).
-
-```
-[Unit]
-Description=Ambiorix application
-
-[Service]
-ExecStart=cd path/to/app && /usr/bin/Rscript --no-save --slave -f app.R
-Restart=on-abnormal
-Type=simple
-
-[Install]
-WantedBy=multi-user.target
-```
-
-One the service is added restart the daemon, you might have to run it as `sudo`.
-
-```bash
-systemctl daemon-reload
-```
-
-You can then start and enable the service, again, you might have to run it as `sudo`.
-
-```bash
-systemctl start ambiorix
-systemctl enable ambiorix
-```
-
-Once the app has started, check its status to make sure that everything runs well.
-
-```bash
-systemctl status ambiorix
-```
+These are just some of the ways in which you can deploy an ambiorix application,
+and this is by no means an exhaustive list.
 
 ## Docker
 
-The easiest way to deploy an ambiorix app is using docker. 
+One of the easiest way to deploy an ambiorix app is by using [docker](https://www.docker.com/) + [`{renv}`](https://rstudio.github.io/renv/articles/renv.html) + [docker compose](<https://docs.docker.com/compose/>).
 
-### Existing Image
+**Requirements:**
 
-This project comes with an image you can pull and use.
+- Install [docker](https://docs.docker.com/engine/install/).
+- Install [docker compose](https://docs.docker.com/compose/install/).
+- Bootstrap your project using [`{renv}`](https://rstudio.github.io/renv/articles/renv.html). Ideally, you only need to run `renv::init()`.
 
-```bash
-docker pull jcoenep/ambiorix
-```
+1. Create a file named `Dockerfile` at the root directory of your project and add this to it:
 
-By default the image will use an internal very basic application and binds it to port `3000`.
+    ```Dockerfile
+    FROM jcoenep/ambiorix
+    WORKDIR /app
+    COPY . .
+    RUN R -e "renv::restore()"
+    EXPOSE 8000
+    CMD [ "Rscript", "index.R" ]
+    ```
 
-```bash
-docker run -p 3000:3000 jcoenep/ambiorix
-```
+    Here are some simple explanations of what each line does:
 
-To use your own application mount your app in the images `/app` directory, so from the root of the app this would look like this:
+    - `FROM jcoenep/ambiorix`: This specifies the base Docker image. It pulls an image pre-configured with
+    Ambiorix from Docker Hub. The [`jcoenep/ambiorix`](https://hub.docker.com/r/jcoenep/ambiorix) image already includes everything needed to run an
+    Ambiorix app.
+    - `WORKDIR /app`: Sets the working directory inside the container to `/app`. All subsequent commands
+    in the Dockerfile will run in this directory.
+    - `COPY . .`: Copies all files from your local project directory (on the host machine) to the `/app`
+    directory inside the container.
+    - `RUN R -e "renv::restore()"`: Runs that R expression which restores the package dependencies defined
+    in your `renv.lock` file.
+    - `EXPOSE 8000`: This is more of documentation to your future self that the container will use port 8000
+    to serve the application. This should be the same port you set ambiorix to run on ie. `Ambiorix$new(port = 8000L)$...`
+    - `CMD [ "Rscript", "index.R" ]`: This sets the default command to run when the container starts.
 
-```bash
-docker run -v "$(pwd)"/.:/app -p 3000:3000 jcoenep/ambiorix
-```
+1. Build the docker image:
 
-### Generate
+    ```bash
+    docker build -t cute-cats .
+    ```
 
-Or you can generate your own dockerfile.
+    - `docker build`: Command to build a Docker image.
+    - `-t cute-cats`: The `-t` flag tags/names the image as `cute-cats`.
+    - `.`: The dot refers to the current directory, meaning Docker will look for the `Dockerfile` in the current folder.
 
-```r
-create_dockerfile(port = 3000L)
-```
+1. Create another file named `docker-compose.yml` and place these contents in it:
 
-The function `create_dockerfile` will parse the `DESCRIPTION` file to create a `Dockerfile`, below is an example of the output.
+    ```yml
+    services:
+      cute-cats:
+        image: cute-cats
+        ports:
+          - "1028:8000"
+        volumes:
+          - ./data:/app/data
+        restart: unless-stopped
+    ```
 
-```dockerfile
-FROM jcoenep/ambiorix
-RUN echo "options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/latest'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
-RUN R -e 'install.packages("remotes")'
-RUN R -e "remotes::install_github('JohnCoene/echarts4r')"
-COPY . .
-EXPOSE 3000
-RUN R -e "options(ambiorix.host='0.0.0.0', 'ambiorix.port'=3000);source('app.R')"
-```
+    - `services`: Defines the containers Docker Compose will manage. In this case, we only have one service called `cute-cats`.
+    - `image: cute-cats`: Tell Docker Compose to use the image we built earlier, named `cute-cats`.
+    - `ports`: Maps port 1028 on the host machine to port 8000 inside the container (where the ambiorix app is served, remember `EXPOSE 8000`?). This means you can access the app at `localhost:1028`.
+    - `volumes`: Maps a folder on the host (`./data`) to the container's `/app/data` directory. This ensures
+    that data in the container is synced with the host and ensures data persistence if the container stops.
+    You can remove the `volumes` mapping if your app doesn't need persistent data storage.
+    - `restart`: Ensures the container automatically restarts if it crashes, unless it has been manually stopped.
 
-You can then build the image.
+1. Run the services:
 
-```docker
-docker build -t ambiorix .
-```
+    ```bash
+    docker compose up -d
+    ```
 
-Finally, run it.
+    - `docker compose up` creates and starts the containers as defined in the `docker-compose.yml` file.
+    - The `-d` flag runs the containers in detached mode ie. in the background.
 
-```docker
-docker run ambiorix
-```
+    This will run the app on port 1028 of the host machine, so you will view it at [localhost:1028](http://localhost:1028/).
 
-With docker installed this will work just as well on your machine as on a remote server.
+1. To stop the services do:
+
+    ```bash
+    docker compose down
+    ```
+
+    This stops and removes the containers but keeps the Docker images intact, so you can start them again
+    later with `docker compose up`.
+
+## Systemd Service
+
+The application can be deployed as a service on any Linux server.
+
+You might need to run these commands as `sudo`.
+
+1. Create a new `.service` file in the `/etc/systemd/system/` directory. The name
+of the file defines the name of the service. We will use `cute-cats.service`
+as an example:
+
+    ```bash
+    vim /etc/systemd/system/cute-cats.service
+    ```
+
+1. In that `.service` file place the following configuration, it creates a service that runs the application at the defined path (`/path/to/app`).
+
+    ```
+    [Unit]
+    Description=An Ambiorix app about the cutest of cats
+
+    [Service]
+    ExecStart=cd /path/to/app && /usr/bin/Rscript --no-save --slave -f app.R
+    Restart=on-abnormal
+    Type=simple
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+1. Reload systemd to recognize the new service:
+
+    ```bash
+    systemctl daemon-reload
+    ```
+
+1. Start the service and enable it to automatically start on boot:
+
+    ```bash
+    systemctl start cute-cats
+    systemctl enable cute-cats
+    ```
+
+1. Check the service status to ensure it's running without any issues:
+
+    ```bash
+    systemctl status cute-cats
+    ```
