@@ -30,7 +30,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/devOpifex/ambiorix-site/tree/main/',
+            'https://github.com/ambiorix-web/ambiorix-site/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -56,7 +56,7 @@ const config = {
           {to: '/docs/middlewares', label: 'Middlewares', position: 'left'},
           {to: '/docs/examples', label: 'Examples', position: 'left'},
           {
-            href: 'https://github.com/devOpifex/ambiorix',
+            href: 'https://github.com/ambiorix-web/ambiorix',
             label: 'GitHub',
             position: 'right',
           },
@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/devOpifex',
+                href: 'https://twitter.com/ambiorix-web',
               },
             ],
           },
@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/devOpifex/ambiorix',
+                href: 'https://github.com/ambiorix-web/ambiorix',
               },
             ],
           },
@@ -121,7 +121,7 @@ const config = {
         {name: 'keywords', content: 'ambiorix,r,rstats,web framework'},
         {name: 'description', content: 'Web framework for the R programming language, inspired by express.js, allows building applications as well as APIs.'},
         {name: 'twitter:card', content: 'summary_large_image'},
-        {name: 'twitter:site', content: '@devOpifex'},
+        {name: 'twitter:site', content: '@ambiorix-web'},
         {name: 'twitter:creator', content: '@JohnCoene'},
         {name: 'twitter:title', content: 'Ambiorix'},
         {name: 'twitter:image', content: 'https://ambiorix.dev/img/banner.png'},

@@ -8,14 +8,14 @@
    # install.packages("devtools")
    ```
 
-1. Install [`ambiorix.generator`](https://github.com/devOpifex/ambiorix.generator) from GitHub:
+1. Install [`ambiorix.generator`](https://github.com/ambiorix-web/ambiorix.generator) from GitHub:
 
    ```r
    # using remotes:
-   remotes::install_github("devOpifex/ambiorix.generator")
+   remotes::install_github("ambiorix-web/ambiorix.generator")
    ```
 
    ```r
     # or using devtools:
-    devtools::install_github("devOpifex/ambiorix.generator")
+    devtools::install_github("ambiorix-web/ambiorix.generator")
    ```

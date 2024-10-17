@@ -32,7 +32,7 @@ You can install the development version of slighe like so:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/slighe")
+remotes::install_github("ambiorix-web/slighe")
 ```
 
 ## Example

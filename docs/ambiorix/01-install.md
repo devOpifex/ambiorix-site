@@ -24,14 +24,14 @@ installed from Github with the
 
 ```r
 # install.packages("remotes")
-remotes::install_github("devOpifex/ambiorix")
+remotes::install_github("ambiorix-web/ambiorix")
 ```
 
 Alternatively use [devtools](https://github.com/r-lib/devtools).
 
 ```r
 # install.packages("devtools")
-devtools::install_github("devOpifex/ambiorix")
+devtools::install_github("ambiorix-web/ambiorix")
 ```
 
 If you use r-universe, see 

@@ -16,8 +16,8 @@ You can change the renderer by either creating your own
 middleware or use one of the existing ones:
 
 - `use_html_template()` [htmltools template engine](https://shiny.rstudio.com/articles/templates.html)
-- [pugger](https://github.com/devOpifex/pugger) Pug engine
-- [jader](https://github.com/devOpifex/jader) Jade engine
+- [pugger](https://github.com/ambiorix-web/pugger) Pug engine
+- [jader](https://github.com/ambiorix-web/jader) Jade engine
 
 ## Sendf
 

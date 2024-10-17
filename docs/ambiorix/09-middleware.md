@@ -14,17 +14,17 @@ from them.
 List of existing middleswares. See the [documentation](/docs/middlewares)
 for more details.
 
-- [druid](https://github.com/devOpifex/druid) Logger
-- [alesia](https://github.com/devOpifex/alesia) Minifier
-- [eburones](https://github.com/devOpifex/eburones) Sessions
-- [agris](https://github.com/devOpifex/druid) Security
-- [scilis](https://github.com/devOpifex/scilis) Cookies
-- [titan](https://github.com/devOpifex/titan) Prometheus middleware
-- [surf](https://github.com/devOpifex/surf) CSRF protection
-- [signaculum](https://github.com/devOpifex/signaculum) favicon
-- [pugger](https://github.com/devOpifex/pugger) Pug engine
-- [jader](https://github.com/devOpifex/jader) Jade engine
-- [slighe](https://github.com/devOpifex/slighe) Pattern matching
+- [druid](https://github.com/ambiorix-web/druid) Logger
+- [alesia](https://github.com/ambiorix-web/alesia) Minifier
+- [eburones](https://github.com/ambiorix-web/eburones) Sessions
+- [agris](https://github.com/ambiorix-web/druid) Security
+- [scilis](https://github.com/ambiorix-web/scilis) Cookies
+- [titan](https://github.com/ambiorix-web/titan) Prometheus middleware
+- [surf](https://github.com/ambiorix-web/surf) CSRF protection
+- [signaculum](https://github.com/ambiorix-web/signaculum) favicon
+- [pugger](https://github.com/ambiorix-web/pugger) Pug engine
+- [jader](https://github.com/ambiorix-web/jader) Jade engine
+- [slighe](https://github.com/ambiorix-web/slighe) Pattern matching
 
 _Feel free to make a PR to add to the list._
 

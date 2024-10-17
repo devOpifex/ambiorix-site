@@ -6,19 +6,19 @@ download the binary
 ## Go
 
 ```bash
-go get github.com/devOpifex/belgic
+go get github.com/ambiorix-web/belgic
 ```
 
 or
 
 ``` bash
-go install github.com/devOpifex/belgic@latest
+go install github.com/ambiorix-web/belgic@latest
 ```
 
 ## Binaries
 
 Alternatively download one of the 
-[available binaries](https://github.com/devOpifex/belgic/tree/master/bin)
+[available binaries](https://github.com/ambiorix-web/belgic/tree/master/bin)
 for your operating system.
 
 You will likely want to run that from a Linux server and therefore

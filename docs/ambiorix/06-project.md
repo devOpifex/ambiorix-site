@@ -13,8 +13,8 @@ application in the form of an R package (recommended).
 ## Package
 
 Create the project with the 
-[ambiorix.generator](https://github.com/devOpifex/ambiorix.generator) 
-or with the [ambiorix-cli](https://github.com/devOpifex/ambiorix-cli).
+[ambiorix.generator](https://github.com/ambiorix-web/ambiorix.generator) 
+or with the [ambiorix-cli](https://github.com/ambiorix-web/ambiorix-cli).
 
 ### CLI
 

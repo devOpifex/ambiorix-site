@@ -37,8 +37,8 @@ No longer force render data as JSON if using an HTML template.
 - Export `serialise`
 - Fixed issue where wrong path pattern was matched.
 - Catch error if no route is specified.
-- Do not force body to character fixes [#44](https://github.com/devOpifex/ambiorix/issues/44)
-- Do no force content type on response fixes [#45](https://github.com/devOpifex/ambiorix/issues/45)
+- Do not force body to character fixes [#44](https://github.com/ambiorix-web/ambiorix/issues/44)
+- Do no force content type on response fixes [#45](https://github.com/ambiorix-web/ambiorix/issues/45)
 - Deprecate passing headers to `response` or `send`-like functions, use
 `header` method.
 - Deprecate `set_header` in favour of `header` method.
@@ -64,8 +64,8 @@ of said router.
 - Added `mockRequest` to for testing purposes.
 - Fixed `port`, `host`, and `websocket` active bindings.
 - Add ability to create custom renderer, see 
-[jader](https://github.com/devOpifex/jader), and 
-[pugger](https://github.com/devOpifex/pugger).
+[jader](https://github.com/ambiorix-web/jader), and 
+[pugger](https://github.com/ambiorix-web/pugger).
 
 ## ambiorix 2.0.0
 
@@ -86,7 +86,7 @@ across sessions.
 - `set` and `get` methods on request store in environment to allow
 locking variables when using `set`.
 - Better instructions for deploying as a service.
-- Remove the deprecated `Logger` class, see [log](https://github.com/devOpifex/log) package.
+- Remove the deprecated `Logger` class, see [log](https://github.com/ambiorix-web/log) package.
 - Pass `host` to free port fetch function.
 - Add hidden option to force change port for upcoming related service.
 - Internals of calls reworked to share response object. 
@@ -123,19 +123,19 @@ with `sprintf`.
 ## ambiorix 1.0.2
 
 - Reaches CRAN
-- Removed `create_ambiorix`, see [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator).
-- Removed `add_template`, see [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator).
-- Deprecate the `Logger` class in favour of the [log](https://github.com/devOpifex/log) package.
-- Fixed `parse_json` [#36](https://github.com/devOpifex/ambiorix/issues/36)
+- Removed `create_ambiorix`, see [ambiorix.generator](https://github.com/ambiorix-web/ambiorix.generator).
+- Removed `add_template`, see [ambiorix.generator](https://github.com/ambiorix-web/ambiorix.generator).
+- Deprecate the `Logger` class in favour of the [log](https://github.com/ambiorix-web/log) package.
+- Fixed `parse_json` [#36](https://github.com/ambiorix-web/ambiorix/issues/36)
 
 ## ambiorix 1.0.1
 
-- Deprecate `create_ambiorix`: moving to [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator) package.
-- Deprecate `add_template`: moving to [ambiorix.generator](https://github.com/devOpifex/ambiorix.generator) package.
+- Deprecate `create_ambiorix`: moving to [ambiorix.generator](https://github.com/ambiorix-web/ambiorix.generator) package.
+- Deprecate `add_template`: moving to [ambiorix.generator](https://github.com/ambiorix-web/ambiorix.generator) package.
 - Added `all` method to define route and handler for all methods `GET`, `POST`, `PUT`, `DELETE`, and `PATCH`.
 - The `use` method now accepts a function which is run every time the server receives a request.
 - Add `set` and `get` to request to add and retrieve params (namely with the middleware)
-- Fix `check_installed`, see [#33](https://github.com/devOpifex/ambiorix/issues/33)
+- Fix `check_installed`, see [#33](https://github.com/ambiorix-web/ambiorix/issues/33)
 
 ## ambiorix 1.0.0
 

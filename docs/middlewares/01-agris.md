@@ -5,11 +5,11 @@ Security middlewares for [ambiorix](https://ambiorix.dev).
 ## Installation
 
 You can install the development version of agris from
-[GitHub](https://github.com/devOpifex/agris) with:
+[GitHub](https://github.com/ambiorix-web/agris) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/agris")
+remotes::install_github("ambiorix-web/agris")
 ```
 
 ## Middlewares

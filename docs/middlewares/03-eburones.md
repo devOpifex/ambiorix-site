@@ -6,7 +6,7 @@ User sessions for [ambiorix](https://ambiorix.dev).
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/eburones")
+remotes::install_github("ambiorix-web/eburones")
 ```
 
 ## Example

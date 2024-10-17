@@ -131,8 +131,8 @@ app$get("/", \(req, res) {
 There are a three middlewares you can use as alternatives.
 
 - `use_html_template()` htmltools template engine
-- [pugger](https://github.com/devOpifex/pugger) Pug engine
-- [jader](https://github.com/devOpifex/jader) Jade engine
+- [pugger](https://github.com/ambiorix-web/pugger) Pug engine
+- [jader](https://github.com/ambiorix-web/jader) Jade engine
 
 For instance with {pugger} on would use a `.pug` file.
 

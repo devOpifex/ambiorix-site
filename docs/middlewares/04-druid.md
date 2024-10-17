@@ -6,7 +6,7 @@ A logger middleware for [ambiorix](https://ambiorix.dev).
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("devOpifex/druid")
+devtools::install_github("ambiorix-web/druid")
 ```
 
 ## Example

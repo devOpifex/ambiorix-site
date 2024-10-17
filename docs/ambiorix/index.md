@@ -1,7 +1,7 @@
 # ambiorix
 
 <!-- badges: start -->
-[![R build status](https://github.com/devOpifex/ambiorix/workflows/R-CMD-check/badge.svg)](https://github.com/devOpifex/ambiorix/actions)
+[![R build status](https://github.com/ambiorix-web/ambiorix/workflows/R-CMD-check/badge.svg)](https://github.com/ambiorix-web/ambiorix/actions)
 <!-- badges: end -->
 
 Web framework for R inspired by [express.js](https://github.com/expressjs/express).
@@ -12,21 +12,21 @@ Web framework for R inspired by [express.js](https://github.com/expressjs/expres
 
 ## Middlewares
 
-- [druid](https://github.com/devOpifex/druid) Logger
-- [alesia](https://github.com/devOpifex/alesia) Minifier
-- [eburones](https://github.com/devOpifex/eburones) Sessions
-- [agris](https://github.com/devOpifex/druid) Security
-- [scilis](https://github.com/devOpifex/scilis) Cookies
-- [titan](https://github.com/devOpifex/titan) Prometheus middleware
-- [surf](https://github.com/devOpifex/surf) CSRF protection
-- [signaculum](https://github.com/devOpifex/signaculum) favicon
-- [pugger](https://github.com/devOpifex/pugger) Pug engine
-- [jader](https://github.com/devOpifex/jader) Jade engine
+- [druid](https://github.com/ambiorix-web/druid) Logger
+- [alesia](https://github.com/ambiorix-web/alesia) Minifier
+- [eburones](https://github.com/ambiorix-web/eburones) Sessions
+- [agris](https://github.com/ambiorix-web/druid) Security
+- [scilis](https://github.com/ambiorix-web/scilis) Cookies
+- [titan](https://github.com/ambiorix-web/titan) Prometheus middleware
+- [surf](https://github.com/ambiorix-web/surf) CSRF protection
+- [signaculum](https://github.com/ambiorix-web/signaculum) favicon
+- [pugger](https://github.com/ambiorix-web/pugger) Pug engine
+- [jader](https://github.com/ambiorix-web/jader) Jade engine
 
 ## Tools & Extensions
 
-- [belgic](https://github.com/devOpifex/belgic) Load balancer
+- [belgic](https://github.com/ambiorix-web/belgic) Load balancer
 - [packer](https://github.com/JohnCoene/packer) JavaScript
-- [CLI](https://github.com/devOpifex/ambiorix-cli) CLI for generator
-- [Generator](https://github.com/devOpifex/ambiorix.generator) Project generator
+- [CLI](https://github.com/ambiorix-web/ambiorix-cli) CLI for generator
+- [Generator](https://github.com/ambiorix-web/ambiorix.generator) Project generator
 - [Docker](https://hub.docker.com/r/jcoenep/ambiorix) Docker image

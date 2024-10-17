@@ -6,7 +6,7 @@ HTML minifier middleware for [ambiorix](https://ambiorix.dev).
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/alesia")
+remotes::install_github("ambiorix-web/alesia")
 ```
 
 ## Example

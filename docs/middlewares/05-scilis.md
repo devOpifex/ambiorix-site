@@ -7,7 +7,7 @@ Secure cookies for [ambiorix](https://ambiorix.dev).
 Get it from Github.
 
 ```r
-remotes::install_github("devOpifex/scilis")
+remotes::install_github("ambiorix-web/scilis")
 ```
 
 ## Example

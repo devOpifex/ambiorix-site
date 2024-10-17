@@ -6,7 +6,7 @@ Caches favicons for [ambiorix](https://ambiorix.dev).
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/signaculum")
+remotes::install_github("ambiorix-web/signaculum")
 ```
 
 ## Example

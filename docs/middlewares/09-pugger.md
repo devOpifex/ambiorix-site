@@ -7,7 +7,7 @@ templating engine with [ambiorix](https://ambiorix.dev).
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/pugger")
+remotes::install_github("ambiorix-web/pugger")
 ```
 
 ## Example

@@ -37,7 +37,7 @@ Visiting both routes gives the following log.
 ## Druid
 
 There is a middleware to easily implement more extensive logging,
-see [druid](https://github.com/devOpifex/druid).
+see [druid](https://github.com/ambiorix-web/druid).
 
 ```r
 library(druid)

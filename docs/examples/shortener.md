@@ -2,7 +2,7 @@
 
 With Ambiorix we can build a URL shortener, it's nothing impressive but an interesting and fun exercise. At it's core a URL shortener accepts URLs and from it generates a shorter version. This is then stored internally so that when the generated URL is stored it simply redirects.
 
-The project has this structure obtained from the [CLI](https://github.com/devOpifex/ambiorix-cli) with `ambiorix-cli create-basic shortener`
+The project has this structure obtained from the [CLI](https://github.com/ambiorix-web/ambiorix-cli) with `ambiorix-cli create-basic shortener`
 
 ```
 .
