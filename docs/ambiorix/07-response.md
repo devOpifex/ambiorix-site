@@ -2,6 +2,8 @@
 
 Every route (`get`, `post`, etc.) handler should accept the request (`req`) and the response (`res`). Note that routes may optionally accept a different handler for errors.
 
+To learn more about any of the response methods described below, please see `?ambiorix::Response`.
+
 ## HTML
 
 Send plain HTML with `send`.
@@ -52,13 +54,18 @@ app$get("/file", \(req, res){
 
 ## Render
 
-An `.html` or `.R` file can also be rendered. The difference with `send_file` is that it will use `data` to process `[% tags %]`. You can read more it in the templates documentation.
+An `.html`, `.md` or `.R` file can also be rendered. The difference with `send_file` is that it will use `data` to process `[% tags %]`. You can read more it in the templates documentation.
 
 ```r
 # renders templates/home.html
 # replaces [% title %]
 app$get("/:book", \(req, res){
   res$render("home.html", data = list(title = req$params$book))
+})
+
+# renders docs/index.md
+app$get("/docs", \(req, res) {
+  res$render("index.md")
 })
 ```
 
@@ -74,27 +81,17 @@ app$get("/:book", \(req, res){
 
 ## Status
 
-The status of the response can be specified in the response method (e.g.: `render('home', status = 200L)`), or with the `status` method.
+The HTTP status of the response can be specified using the `set_status()` method.
 
 ```r
 app$get("/error", \(req, res){
-  res$status(500)
+  res$set_status(500L)
   res$send("Error!")
 })
 
 # or
 app$get("/error", \(req, res){
-  res$send("Error!", status = 500L)
-})
-```
-
-## Redirect
-
-One can also redirect to a different url, note that these should have a `status` starting in `3`.
-
-```r
-app$get("/redirect", \(req, res){
-  res$redirect("/", status = 302L)
+  res$set_status(500L)$send("Error!")
 })
 ```
 
@@ -117,6 +114,53 @@ app$get("/tsv", \(req, res){
   res$tsv(mtcars, "more-cars")
 })
 ```
+
+## Image
+
+To send `.png` or `.jpeg` files, use the `image()` method:
+
+```r
+app$get("/cute-cat", \(req, res) {
+  res$image(file = "/path/to/local/file")
+})
+```
+
+If you prefer, you can be more specific and use the `png()` & `jpeg()` methods:
+
+```r
+app$get("/cute-cat-png", \(req, res) {
+  res$png(file = "/path/to/local/png/file")
+})
+
+app$get("/cute-cat-jpeg", \(req, res) {
+  res$jpeg(file = "/path/to/local/jpeg/file")
+})
+```
+
+## ggplot2
+
+Send a ggplot2 plot using the `ggplot2()` method:
+
+```r
+app$get("ggplot", \(req, res) {
+  # make the plot:
+  p <- ggplot2::ggplot(
+    data = iris,
+    mapping = ggplot2::aes(
+      x = Sepal.Length,
+      y = Petal.Width,
+      color = Species
+    )
+  ) +
+    ggplot2::geom_point() +
+    ggplot2::theme_bw()
+
+  res$ggplot2(plot = p, type = "jpeg") # or "png"
+})
+```
+
+Any further parameters given to `res$ggplot2()` are
+passed to `ggplot2::gsave()` function. eg. `width` & `height`.
 
 ## htmlwidgets
 
@@ -143,3 +187,58 @@ app$get("/hello", \(req, res){
 })
 ```
 
+If you have several headers, put them in a named list and use the
+`set_headers()` method:
+
+```r
+app$get("/hello", \(req, res) {
+  headers <- list(
+    "Content-Type" = "something",
+    "Access-Control-Allow-Origin" = "https://ambiorix.dev",
+    "Header-Name" = "Header Value"
+  )
+  res$set_headers(headers)
+  res$send("Using {ambiorix}")
+})
+```
+
+In addition, there are several methods for setting the `Content-Type`
+header of the response. These will come in handy when you've written your own
+custom serializers. They all have the prefix `header_content_`:
+
+- `res$header_content_json()`
+- `res$header_content_html()`
+- `res$header_content_plain()`
+- `res$header_content_csv()`
+- `res$header_content_tsv()`
+
+## Cookies
+
+To set a cookie, use the `cookie()` method:
+
+```r
+app$get("/hello", \(req, res) {
+  today <- as.character(Sys.Date())
+  res$cookie(name = "today", value = today)
+  res$send("Hello! Cookie 'today' has been set.")
+})
+```
+
+To clear a cookie, use the `clear_cookie()` method:
+
+```r
+app$get("/hello2", \(req,res) {
+  res$clear_cookie(name = "today")
+  res$send("Cookie 'today' cleared!")
+})
+```
+
+## Redirect
+
+One can also redirect to a different url, note that these should have a `status` starting in `3`.
+
+```r
+app$get("/redirect", \(req, res){
+  res$redirect("/", status = 302L)
+})
+```
