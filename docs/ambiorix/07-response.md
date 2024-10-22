@@ -242,3 +242,46 @@ app$get("/redirect", \(req, res){
   res$redirect("/", status = 302L)
 })
 ```
+
+## Pre-render hooks
+
+A pre-render hook runs before the `render()` and `send_file()` methods. Pre-render
+hooks are meant to be used as middlewares to, if necessary, do pre-processing
+before rendering.
+
+It must accept at least 4 arguments:
+
+- `self`: The Request class instance.
+- `content`: String. [File] content of the template.
+- `data`: Named list. Passed from the `render()` method.
+- `ext`: File extension of the template file.
+
+Include `...` in your hook to ensure it will handle potential updates
+to hooks in the future.
+
+The pre-render hook must return an object of class 'responsePreHook' as
+obtained by `ambiorix::pre_hook()`.
+
+```r
+my_prh <- \(self, content, data, ext, ...) {
+  data$title <- "Mansion"
+  pre_hook(content, data)
+}
+
+#' Handler for GET at '/'
+#' 
+#' @details Renders the homepage
+#' @export
+home_get <- \(req, res) {
+  res$pre_render_hook(my_prh)
+  res$render(
+    file = "page.html",
+    data = list(
+      title = "Home"
+    )
+  )
+}
+```
+
+In the above example, even though we have provided the title to `render()`
+as "Home", it is changed in `my_prh()` to "Mansion".
