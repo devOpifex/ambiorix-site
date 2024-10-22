@@ -254,7 +254,7 @@ It must accept at least 4 arguments:
 - `self`: The Request class instance.
 - `content`: String. [File] content of the template.
 - `data`: Named list. Passed from the `render()` method.
-- `ext`: File extension of the template file.
+- `ext`: String. File extension of the template file.
 
 Include `...` in your hook to ensure it will handle potential updates
 to hooks in the future.
@@ -285,3 +285,43 @@ home_get <- \(req, res) {
 
 In the above example, even though we have provided the title to `render()`
 as "Home", it is changed in `my_prh()` to "Mansion".
+
+## Post-render hooks
+
+A post-render hook runs after the rendering of HTML. It must be a function
+that accepts at least 3 arguments:
+
+- `self`: The 'Response' class instance.
+- `content`: String. [File] content of the template.
+- `ext`: String. File extension of the template file.
+
+Also, include `...` in your hook to ensure it will handle potential
+updates to hooks in the future.
+
+Ideally, it should return the `content`.
+
+```r
+my_prh <- \(self, content, ext, ...) {
+  print("Done rendering!")
+  content
+}
+
+#' Handler for GET at '/'
+#'
+#' @details Renders the homepage.
+#'
+#' @export
+home_get <- \(req, res) {
+  res$
+    post_render_hook(my_prh)$
+    render(
+    template_path("page.html"),
+    list(
+      title = "Home",
+      content = home()
+    )
+  )
+}
+```
+
+After each render on the home page, `my_prh()` will print "Done rendering!" on the console.
