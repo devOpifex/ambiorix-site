@@ -19,7 +19,7 @@ for more details.
 - [eburones](https://github.com/ambiorix-web/eburones) Sessions
 - [agris](https://github.com/ambiorix-web/druid) Security
 - [scilis](https://github.com/ambiorix-web/scilis) Cookies
-- [titan](https://github.com/ambiorix-web/titan) Prometheus middleware
+- [titan](https://github.com/devOpifex/titan) Prometheus middleware
 - [surf](https://github.com/ambiorix-web/surf) CSRF protection
 - [signaculum](https://github.com/ambiorix-web/signaculum) favicon
 - [pugger](https://github.com/ambiorix-web/pugger) Pug engine
